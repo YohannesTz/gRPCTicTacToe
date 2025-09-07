@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package tictactoe;
+
+option java_package = "com.github.yohannestz.grpctictactoe";
+option java_outer_classname = "TicTacToeProto";
+option java_multiple_files = true;
+
+message CreateRequest {
+  string player_name = 1;
+}
+
+message CreateResponse {
+  string game_id = 1;
+  string your_symbol = 2;
+}
+
+message JoinRequest {
+  string game_id = 1;
+  string player_name = 2;
+}
+
+message Player {
+  string name = 1;
+  string symbol = 2;
+}
+
+message MoveRequest {
+  string game_id = 1;
+  string player_name = 2;
+  int32 row = 3;
+  int32 col = 4;
+}
+
+message MoveResponse {
+  bool ok = 1;
+  string message = 2;
+}
+
+message StateRequest {
+  string game_id = 1;
+}
+
+message GameState {
+  string game_id = 1;
+  repeated string board = 2;
+  string next_turn = 3;
+  string status = 4;
+  repeated Player players = 5;
+}
+
+service TicTacToe {
+  rpc CreateGame(CreateRequest) returns (CreateResponse);
+  rpc JoinGame(JoinRequest) returns (stream GameState);
+  rpc MakeMove(MoveRequest) returns (MoveResponse);
+  rpc GetState(StateRequest) returns (GameState);
+}

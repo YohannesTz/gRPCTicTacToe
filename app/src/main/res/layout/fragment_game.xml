@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:paddingVertical="16dp"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/not_connected"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPlayers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingVertical="8dp"
+        android:visibility="gone"/>
+
+    <GridLayout
+        android:id="@+id/boardGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <Button
+            android:id="@+id/cell0"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell4"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell5"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell6"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell7"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/cell8"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1" />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/your_name"
+            android:importantForAutofill="no" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/etGameId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/game_id"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/create" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnJoin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/join" />
+    </LinearLayout>
+
+</LinearLayout>
