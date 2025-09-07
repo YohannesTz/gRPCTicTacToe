@@ -3,7 +3,6 @@ const protoLoader = require('@grpc/proto-loader');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 
-//const PROTO_PATH = path.join(__dirname, '..', 'proto', 'tictactoe.proto');
 const PROTO_PATH = path.join(__dirname, '..', 'app', 'src', 'main', 'proto', 'tictactoe.proto');
 const packageDef = protoLoader.loadSync(PROTO_PATH, { keepCase: false, longs: String, enums: String, defaults: true, oneofs: true });
 const proto = grpc.loadPackageDefinition(packageDef).tictactoe;
@@ -51,8 +50,6 @@ const serviceImpl = {
     games.set(gameId, g);
     callback(null, { gameId, yourSymbol: 'X' });
   },
-
-
 
    MakeMove: (call, callback) => {
     const { gameId, playerName, row, col } = call.request;
